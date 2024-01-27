@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        * {
+            background-color: #b0c4de;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 300;
+        }
+
+        #collapseExample {
+            font-weight: bolder;
+            font-size: larger;
+        }
+    </style>
+    <script>
+        let a;
+        let date;
+        let time;
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        };
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time + " <br>on " + date;
+
+            //for dubai date and time 
+            const dubaid = new Date();
+            const dubailocalTime = dubaid.getTime();
+            const dubailocalOffset = dubaid.getTimezoneOffset() * 60000;
+
+            const dubaiutc = dubailocalTime + dubailocalOffset;
+            const dubaioffset = 4; // UTC of Dubai is +04.00
+            const dubai = dubaiutc + (3600000 * dubaioffset);
+
+            const dubaiTimeNow = new Date(dubai).toLocaleString();
+            document.getElementById('id1').innerHTML = dubaiTimeNow;
+
+            //for USA date and time 
+            const USAd = new Date();
+            const USAlocalTime = USAd.getTime();
+            const USAlocalOffset = USAd.getTimezoneOffset() * 60000;
+
+            const USAutc = USAlocalTime + USAlocalOffset;
+            const USAoffset = 5; // UTC of usa is +05.00
+            const USA = USAutc + (3600000 * USAoffset);
+
+            const USATimeNow = new Date(USA).toLocaleString();
+            document.getElementById('id2').innerHTML = USATimeNow;
+
+            //for britain date and time 
+            const britaind = new Date();
+            const britainlocalTime = britaind.getTime();
+            const britainlocalOffset = britaind.getTimezoneOffset() * 60000;
+
+            const britainutc = britainlocalTime + britainlocalOffset;
+            const britainoffset = 0; // UTC of britain is +00.00
+            const britain = britainutc + (3600000 * britainoffset);
+
+            const britainTimeNow = new Date(britain).toLocaleString();
+            document.getElementById('id3').innerHTML = britainTimeNow;
+
+            //for pak date and time 
+            const pakd = new Date();
+            const paklocalTime = pakd.getTime();
+            const paklocalOffset = pakd.getTimezoneOffset() * 60000;
+
+            const pakutc = paklocalTime + paklocalOffset;
+            const pakoffset = 5; // UTC of pak is +05.00
+            const pak = pakutc + (3600000 * pakoffset);
+
+            const pakTimeNow = new Date(pak).toLocaleString();
+            document.getElementById('id4').innerHTML = pakTimeNow;
+
+            //for japan date and time
+            const japd = new Date();
+            const japlocalTime = japd.getTime();
+            const japlocalOffset = japd.getTimezoneOffset() * 60000;
+
+            const japutc = japlocalTime + japlocalOffset;
+            const japoffset = 9; // UTC of japan is +09.00
+            const jap = japutc + (3600000 * japoffset);
+
+            const japTimeNow = new Date(jap).toLocaleString();
+            document.getElementById('id5').innerHTML = japTimeNow;
+
+            //for china date and time 
+            const chd = new Date();
+            const chlocalTime = chd.getTime();
+            const chlocalOffset = chd.getTimezoneOffset() * 60000;
+
+            const chutc = chlocalTime + chlocalOffset;
+            const choffset = 8; // UTC of china is +08.00
+            const ch = chutc + (3600000 * choffset);
+
+            const chTimeNow = new Date(ch).toLocaleString();
+            document.getElementById('id6').innerHTML = chTimeNow;
+
+            //for canada date and time 
+            const cand = new Date();
+            const canlocalTime = cand.getTime();
+            const canlocalOffset = cand.getTimezoneOffset() * 60000;
+
+            const canutc = canlocalTime + canlocalOffset;
+            const canoffset = -3.5; // UTC of canada is -03.50
+            const can = canutc + (3600000 * canoffset);
+
+            const canTimeNow = new Date(can).toLocaleString();
+            document.getElementById('id7').innerHTML = canTimeNow;
+
+            //for russia date and time 
+            const rusd = new Date();
+            const ruslocalTime = rusd.getTime();
+            const ruslocalOffset = rusd.getTimezoneOffset() * 60000;
+
+            const rusutc = ruslocalTime + ruslocalOffset;
+            const rusoffset = 3; // UTC of russia is +03.00
+            const rus = rusutc + (3600000 * rusoffset);
+
+            const rusTimeNow = new Date(rus).toLocaleString();
+            document.getElementById('id8').innerHTML = rusTimeNow;
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Current Time In India: <span id="time"></span></h1>
+            <p class="lead">We have simply got you covered.</p>
+            <hr class="my-4">
+            <p>We are here to show you the time of different countries<br>
+                Kindly click on the button below to see the date and time of other countries!
+            </p>
+
+
+            <p class="d-inline-flex gap-1">
+
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Browse Time
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <span class="col-12 bg-primary"> Dubai Date and Time are<br><span id="id1"></span></span>
+                    <span class=" col-12 bg-secondary">USA Date and Time are<br><span id="id2"></span></span>
+                    <span class=" col-12 bg-success">Great Britain Date and Time are<br><span id="id3"></span></span>
+                    <span class=" col-12 bg-danger">Pakistan Date and Time are<br><span id="id4"></span></span>
+                    <span class="col-12 bg-warning">Japan Date and Time are<br><span id="id5"></span></span>
+                    <span class=" col-12 bg-info">China Date and Time are<br><span id="id6"></span></span>
+                    <span class="col-12 bg-light">Canada Date and Time are<br><span id="id7"></span></span>
+                    <span class=" col-12 bg-success">Russia Date and Time are <br><span id="id8"></span></span>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
